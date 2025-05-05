@@ -1,0 +1,164 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (leftstuff :hexpand true)  ; this will left-align
+    (box :hexpand true)        ; this keeps the center open
+    (rightstuff :hexpand true)))  ; this right-aligns properly
+
+
+(defwidget rightstuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (powerbtn)
+    (ram)
+    (vol)
+    (bat)
+  time))
+
+(defwidget leftstuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "start"
+    (powermenu)
+    (workspaces)
+    (brightness)
+  ))
+
+(defwidget bat []
+  (eventbox
+    :onhover "eww open battery_popup"
+    :onhoverlost "eww close battery_popup"
+    (label :class "bat" :text battery_ascii)))
+
+(defwindow battery_popup
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  :geometry (geometry
+    :anchor "top right"
+    :x "175px"  ;Locations change
+    :y "10px"
+  :width "70px")
+  (box :class "battery-popup"
+    (label :text battery_status)))
+
+
+(defwidget vol []
+  (eventbox
+    :onhover "eww open volume_popup"
+    :onhoverlost "eww close volume_popup"
+    (label :class volume_class :text volume_ascii)))
+
+(defwindow volume_popup
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  :geometry (geometry
+    :anchor "top right"
+    :x "260px"
+    :y "10px"
+  :width "70px")
+  (box :class "volume-popup"
+    (label :text volume_percent)))
+
+
+(defwidget ram []
+  (eventbox
+    :onhover "eww open ram_popup"
+    :onhoverlost "eww close ram_popup"
+    (label :class ram_class :text ram_ascii)))
+
+(defwindow ram_popup
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  :geometry (geometry
+    :anchor "top right"
+    :x "370px"
+    :y "10px"
+  :width "180px")
+  (box :class "volume-popup"
+    (label :text ram_percent)))
+
+(defwidget powerbtn []
+  (button
+    :onclick "bash /home/hugana/.config/eww/scripts/cycle_power_profile.sh"
+    (label :class power_profile :text power_profile)))
+
+(defwidget powermenu []
+  (box :orientation "h" :class "powermenu"
+    (button :class "poweroff" :onclick "systemctl poweroff"
+      (label :text ""))
+    (button :class "suspend" :onclick "systemctl suspend"
+      (label :text "󰤄"))
+    (button :class "logout" :onclick "hyprctl dispatch exit"
+      (label :text "󰍃"))))
+
+(defwidget workspaces []
+  (box :class "workspaces" :orientation "h" :halign "start" :spacing 8
+    (button :class ws_class_1 :onclick "hyprctl dispatch workspace 1" (label :text "1"))
+    (button :class ws_class_2 :onclick "hyprctl dispatch workspace 2" (label :text "2"))
+    (button :class ws_class_3 :onclick "hyprctl dispatch workspace 3" (label :text "3"))
+    (button :class ws_class_4 :onclick "hyprctl dispatch workspace 4" (label :text "4"))
+    (button :class ws_class_5 :onclick "hyprctl dispatch workspace 5" (label :text "5"))
+    (button :class ws_class_6 :onclick "hyprctl dispatch workspace 6" (label :text "6"))
+    (button :class ws_class_7 :onclick "hyprctl dispatch workspace 7" (label :text "7"))
+    (button :class ws_class_8 :onclick "hyprctl dispatch workspace 8" (label :text "8"))
+    (button :class ws_class_9 :onclick "hyprctl dispatch workspace 9" (label :text "9"))
+    (button :class ws_class_10 :onclick "hyprctl dispatch workspace 10" (label :text "10"))))
+
+(defwidget brightness []
+  (eventbox
+    :onhover "eww open brightness_popup"
+    :onhoverlost "eww close brightness_popup"
+    (label :class "brightness" :text brightness_ascii)))
+
+
+(defwindow brightness_popup
+  :monitor 0
+  :stacking "fg"
+  :exclusive false
+  :geometry (geometry
+    :anchor "top right"
+    :x "1310px"
+    :y "10px"
+  :width "65px")
+  (box :class "brightness-popup"
+    (label :text brightness_percent)))
+
+
+(defpoll battery_ascii :interval "1s" "/home/hugana/.config/eww/scripts/getbatteryascii.sh")
+(defpoll battery_status :interval "1s" "/home/hugana/.config/eww/scripts/getbatterystatus.sh")
+(defpoll volume_ascii :interval "0.1s" "/home/hugana/.config/eww/scripts/getvolumeascii.sh")
+(defpoll volume_class :interval "0.1s" "/home/hugana/.config/eww/scripts/getvolumeclass.sh")
+(defpoll volume_percent :interval "0.1s" "/home/hugana/.config/eww/scripts/getvolumepercent.sh")
+(defpoll ram_ascii :interval "0.1s" "/home/hugana/.config/eww/scripts/getramascii.sh")
+(defpoll ram_percent :interval "0.1s" "/home/hugana/.config/eww/scripts/getrampercent.sh")
+(defpoll ram_class :interval "0.1s" "/home/hugana/.config/eww/scripts/getramclass.sh")
+(defpoll power_profile :interval "0.5s" "/home/hugana/.config/eww/scripts/get_power_profile.sh")
+(defpoll brightness_ascii :interval "0.1s" "/home/hugana/.config/eww/scripts/getbrightnessascii.sh")
+(defpoll brightness_percent :interval "0.1s" "/home/hugana/.config/eww/scripts/getbrightnesspercent.sh ")
+
+(defpoll ws_class_1 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 1")
+(defpoll ws_class_2 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 2")
+(defpoll ws_class_3 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 3")
+(defpoll ws_class_4 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 4")
+(defpoll ws_class_5 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 5")
+(defpoll ws_class_6 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 6")
+(defpoll ws_class_7 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 7")
+(defpoll ws_class_8 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 8")
+(defpoll ws_class_9 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 9")
+(defpoll ws_class_10 :interval ".1s" "/home/hugana/.config/eww/scripts/get_ws_class.sh 10")
+
+
+
+
+(defpoll time :interval "10s" "date '+%H:%M %b %d, %Y'")
+
+(defwindow bar
+  :monitor 0
+  :stacking "bg"
+  :exclusive false
+  :geometry (geometry
+    :anchor "top center"
+    :x "0%"
+    :y "-45"
+    :width "100%"
+  :height "0px")
+  (bar))

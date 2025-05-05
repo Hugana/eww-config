@@ -1,0 +1,255 @@
+* {
+  all: unset;
+  font-family: "FiraCode Nerd Font";
+  color: white;
+  font-size: 15px;
+}
+
+.bar {
+  background-color: transparent;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border-radius: 0px;
+}
+
+.bat {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.2rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 1rem 0rem 0.2rem;     /* top, right, bottom, left */
+  color: #08eca8;
+  border: 2px solid #08eca8;
+}
+
+.battery-popup {
+  background-color: #2e3440;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+}
+
+.vol-muted {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #7c7c7c;
+  border-color: #7c7c7c;
+}
+
+.vol-low {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f2cc0f;
+  border-color: #f2cc0f;
+}
+
+.vol-medium {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #08eca8;
+  border-color: #08eca8;
+}
+
+.vol-high {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f7768e;
+  border-color: #f7768e;
+}
+
+.volume_popup {
+  background-color: #2e3440;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+}
+
+.ram_popup {
+  background-color: #2e3440;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+}
+
+.ram-low {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #08eca8;
+  border-color: #08eca8;
+}
+
+.ram-medium {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f2cc0f;
+  border-color: #f2cc0f;
+}
+
+.ram-high {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f7768e;
+  border-color: #f7768e;
+}
+
+.vol-low {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f2cc0f;
+  border-color: #f2cc0f;
+}
+
+.power-saver {
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #08caec;
+  border-color: #08caec;
+}
+
+.balanced {
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #08eca8;
+  border-color: #08eca8;
+}
+
+.performance {
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #f7768e;
+  border-color: #f7768e;
+}
+
+.poweroff,
+.suspend,
+.logout {
+  font-family: "FiraCode Nerd Font";
+  font-size: 13px;
+  padding: 0.4rem 0.55rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 0.2rem;       /* spacing between buttons */
+  border: 2px solid;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Specific colors for each */
+.poweroff {
+  color: #f7768e;
+  border-color: #f7768e;
+}
+
+.suspend {
+  color: #e0af68;
+  border-color: #e0af68;
+}
+
+.logout {
+  color: #7aa2f7;
+  border-color: #7aa2f7;
+}
+
+/* Optional hover effect */
+.poweroff:hover {
+  background-color: #f7768e;
+  color: #2e3440;
+}
+.suspend:hover {
+  background-color: #e0af68;
+  color: #2e3440;
+}
+.logout:hover {
+  background-color: #7aa2f7;
+  color: #2e3440;
+}
+
+.ws-btn {
+  font-family: "FiraCode Nerd Font";
+  font-size: 10px;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem -1rem 0rem 0.8rem; 
+  color: #a9b1d6;
+  border: 2px solid #98f7fe;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ws-btn:hover {
+  background-color: #7aa2f7;
+  color: #2e3440;
+  border-color: #7aa2f7;
+}
+
+.ws-active {
+  font-family: "FiraCode Nerd Font";
+  font-size: 10px;
+  padding: 0.4rem 0.4rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem -1rem 0rem 0.8rem; 
+  color: #a9b1d6;
+  border: 2px solid #98f7fe;
+  border-radius: 6px;
+  background-color: #7aa2f7;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ws-active:hover {
+  background-color: #7aa2f7;
+  color: #2e3440;
+  border-color: #7aa2f7;
+}
+
+.brightness {
+  font-family:"FiraCode Nerd Font";
+  font-size: 18px;
+  padding: 0.4rem 0.5rem 0.4rem 0.4rem; /* top, right, bottom, left */
+  margin: 0rem 0.2rem 0rem 1.6rem;     /* top, right, bottom, left */
+  border: 2px solid;
+  color: #08eca8;
+  border-color: #08eca8;
+}
+
+.brightness-popup {
+  background-color: #2e3440;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family:"FiraCode Nerd Font";
+  font-size: 13px;
+}
+
+
+
+
